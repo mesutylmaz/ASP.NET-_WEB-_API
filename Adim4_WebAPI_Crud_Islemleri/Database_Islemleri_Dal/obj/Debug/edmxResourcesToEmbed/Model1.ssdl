@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcOnlineTicariOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdi" Type="varchar" MaxLength="10" />
+    <Property Name="KullaniciSifresi" Type="varchar" MaxLength="10" />
+    <Property Name="Yetki" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Caris">
+    <Key>
+      <PropertyRef Name="CariID" />
+    </Key>
+    <Property Name="CariID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CariAdi" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CariSoyadi" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CariSehir" Type="varchar" MaxLength="13" />
+    <Property Name="CariMaili" Type="varchar" MaxLength="50" />
+    <Property Name="CariDurumu" Type="bit" Nullable="false" />
+    <Property Name="CariSifresi" Type="varchar" MaxLength="20" />
+    <Property Name="CariGorseli" Type="varchar" MaxLength="250" />
+    <Property Name="Adres" Type="varchar" MaxLength="250" />
+    <Property Name="CariTelefon" Type="varchar" MaxLength="20" />
+    <Property Name="EgitimBilgisi" Type="varchar" MaxLength="50" />
+    <Property Name="YetenekBilgisi" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Departmen">
+    <Key>
+      <PropertyRef Name="DepartmanID" />
+    </Key>
+    <Property Name="DepartmanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmanAdi" Type="varchar" MaxLength="30" />
+    <Property Name="DepartmanDurumu" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detays">
+    <Key>
+      <PropertyRef Name="DetayID" />
+    </Key>
+    <Property Name="DetayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunAd" Type="varchar" MaxLength="30" />
+    <Property Name="UrunBilgisi" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="FaturaKalems">
+    <Key>
+      <PropertyRef Name="FaturaKalemID" />
+    </Key>
+    <Property Name="FaturaKalemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FaturaKalemAciklama" Type="varchar" MaxLength="100" />
+    <Property Name="FaturaKalemMiktar" Type="int" Nullable="false" />
+    <Property Name="FaturaKalemBirimFiyat" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FaturaKalemTutar" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Faturaid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Faturas">
+    <Key>
+      <PropertyRef Name="FaturaID" />
+    </Key>
+    <Property Name="FaturaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FaturaSeriNo" Type="char" MaxLength="1" />
+    <Property Name="FaturaSiraNo" Type="varchar" MaxLength="6" />
+    <Property Name="FaturaTarih" Type="datetime" Nullable="false" />
+    <Property Name="FaturaSaat" Type="char" MaxLength="5" />
+    <Property Name="FaturaTeslimEden" Type="varchar" MaxLength="30" />
+    <Property Name="FaturaTeslimAlan" Type="varchar" MaxLength="30" />
+    <Property Name="FaturaVergiDairesi" Type="varchar" MaxLength="60" />
+    <Property Name="ToplamTutar" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Giders">
+    <Key>
+      <PropertyRef Name="GiderID" />
+    </Key>
+    <Property Name="GiderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GiderAciklama" Type="varchar" MaxLength="100" />
+    <Property Name="GiderTarih" Type="datetime" Nullable="false" />
+    <Property Name="GiderTutar" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KargoDetays">
+    <Key>
+      <PropertyRef Name="KargoDetayID" />
+    </Key>
+    <Property Name="KargoDetayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Aciklama" Type="varchar" MaxLength="300" />
+    <Property Name="TakipKodu" Type="varchar" MaxLength="18" />
+    <Property Name="Personel" Type="varchar" MaxLength="20" />
+    <Property Name="Alici" Type="varchar" MaxLength="25" />
+    <Property Name="Tarih" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KargoTakips">
+    <Key>
+      <PropertyRef Name="KargoTakipID" />
+    </Key>
+    <Property Name="KargoTakipID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KargoTakipKodu" Type="varchar" MaxLength="18" />
+    <Property Name="Aciklama" Type="varchar" MaxLength="100" />
+    <Property Name="TarihZaman" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kategoris">
+    <Key>
+      <PropertyRef Name="KategoriID" />
+    </Key>
+    <Property Name="KategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KategoriAdi" Type="varchar" MaxLength="30" />
+    <Property Name="KategoriDurumu" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mesajs">
+    <Key>
+      <PropertyRef Name="MesajID" />
+    </Key>
+    <Property Name="MesajID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Alici" Type="varchar" MaxLength="50" />
+    <Property Name="Gonderici" Type="varchar" MaxLength="50" />
+    <Property Name="Konu" Type="varchar" MaxLength="50" />
+    <Property Name="Tarih" Type="smalldatetime" Nullable="false" />
+    <Property Name="Icerik" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Personels">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelAdi" Type="varchar" MaxLength="100" />
+    <Property Name="PersonelSoyadi" Type="varchar" MaxLength="100" />
+    <Property Name="PersonelGorseli" Type="varchar" MaxLength="250" />
+    <Property Name="Departmanid" Type="int" Nullable="false" />
+    <Property Name="PersonelDurumu" Type="bit" Nullable="false" />
+    <Property Name="Adres" Type="varchar" MaxLength="250" />
+    <Property Name="PersonelMaili" Type="varchar" MaxLength="50" />
+    <Property Name="PersonelTelefon" Type="varchar" MaxLength="20" />
+    <Property Name="EgitimBilgisi" Type="varchar" MaxLength="50" />
+    <Property Name="YetenekBilgisi" Type="varchar" MaxLength="250" />
+    <Property Name="PersonelSifresi" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SatisHarekets">
+    <Key>
+      <PropertyRef Name="SatisHareketID" />
+    </Key>
+    <Property Name="SatisHareketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SatisHareketTarihi" Type="datetime" Nullable="false" />
+    <Property Name="SatisHareketAdedi" Type="int" Nullable="false" />
+    <Property Name="SatisHareketFiyati" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SatisHareketToplamTutari" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cariid" Type="int" Nullable="false" />
+    <Property Name="Personelid" Type="int" Nullable="false" />
+    <Property Name="Urunid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Uruns">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunAdi" Type="varchar" MaxLength="30" />
+    <Property Name="UrunMarka" Type="varchar" MaxLength="30" />
+    <Property Name="UrunStok" Type="smallint" Nullable="false" />
+    <Property Name="UrunAlisFiyati" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UrunSatisFiyati" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UrunDurumu" Type="bit" Nullable="false" />
+    <Property Name="UrunGorseli" Type="varchar" MaxLength="250" />
+    <Property Name="Kategoriid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YapilacakListesis">
+    <Key>
+      <PropertyRef Name="YapilacakID" />
+    </Key>
+    <Property Name="YapilacakID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="100" />
+    <Property Name="Durumu" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_FaturaKalems_dbo_Faturas_Faturaid">
+    <End Role="Faturas" Type="Self.Faturas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FaturaKalems" Type="Self.FaturaKalems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faturas">
+        <PropertyRef Name="FaturaID" />
+      </Principal>
+      <Dependent Role="FaturaKalems">
+        <PropertyRef Name="Faturaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Personels_dbo_Departmen_Departmanid">
+    <End Role="Departmen" Type="Self.Departmen" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departmen">
+        <PropertyRef Name="DepartmanID" />
+      </Principal>
+      <Dependent Role="Personels">
+        <PropertyRef Name="Departmanid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SatisHarekets_dbo_Caris_Cariid">
+    <End Role="Caris" Type="Self.Caris" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SatisHarekets" Type="Self.SatisHarekets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Caris">
+        <PropertyRef Name="CariID" />
+      </Principal>
+      <Dependent Role="SatisHarekets">
+        <PropertyRef Name="Cariid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SatisHarekets_dbo_Personels_Personelid">
+    <End Role="Personels" Type="Self.Personels" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SatisHarekets" Type="Self.SatisHarekets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personels">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="SatisHarekets">
+        <PropertyRef Name="Personelid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SatisHarekets_dbo_Uruns_Urunid">
+    <End Role="Uruns" Type="Self.Uruns" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SatisHarekets" Type="Self.SatisHarekets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uruns">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="SatisHarekets">
+        <PropertyRef Name="Urunid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Uruns_dbo_Kategoris_Kategoriid">
+    <End Role="Kategoris" Type="Self.Kategoris" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Uruns" Type="Self.Uruns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoris">
+        <PropertyRef Name="KategoriID" />
+      </Principal>
+      <Dependent Role="Uruns">
+        <PropertyRef Name="Kategoriid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MvcOnlineTicariOtomasyonModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Caris" EntityType="Self.Caris" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departmen" EntityType="Self.Departmen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detays" EntityType="Self.Detays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaturaKalems" EntityType="Self.FaturaKalems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Faturas" EntityType="Self.Faturas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Giders" EntityType="Self.Giders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KargoDetays" EntityType="Self.KargoDetays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KargoTakips" EntityType="Self.KargoTakips" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kategoris" EntityType="Self.Kategoris" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mesajs" EntityType="Self.Mesajs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personels" EntityType="Self.Personels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SatisHarekets" EntityType="Self.SatisHarekets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uruns" EntityType="Self.Uruns" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YapilacakListesis" EntityType="Self.YapilacakListesis" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_FaturaKalems_dbo_Faturas_Faturaid" Association="Self.FK_dbo_FaturaKalems_dbo_Faturas_Faturaid">
+      <End Role="Faturas" EntitySet="Faturas" />
+      <End Role="FaturaKalems" EntitySet="FaturaKalems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Personels_dbo_Departmen_Departmanid" Association="Self.FK_dbo_Personels_dbo_Departmen_Departmanid">
+      <End Role="Departmen" EntitySet="Departmen" />
+      <End Role="Personels" EntitySet="Personels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SatisHarekets_dbo_Caris_Cariid" Association="Self.FK_dbo_SatisHarekets_dbo_Caris_Cariid">
+      <End Role="Caris" EntitySet="Caris" />
+      <End Role="SatisHarekets" EntitySet="SatisHarekets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SatisHarekets_dbo_Personels_Personelid" Association="Self.FK_dbo_SatisHarekets_dbo_Personels_Personelid">
+      <End Role="Personels" EntitySet="Personels" />
+      <End Role="SatisHarekets" EntitySet="SatisHarekets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SatisHarekets_dbo_Uruns_Urunid" Association="Self.FK_dbo_SatisHarekets_dbo_Uruns_Urunid">
+      <End Role="Uruns" EntitySet="Uruns" />
+      <End Role="SatisHarekets" EntitySet="SatisHarekets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Uruns_dbo_Kategoris_Kategoriid" Association="Self.FK_dbo_Uruns_dbo_Kategoris_Kategoriid">
+      <End Role="Kategoris" EntitySet="Kategoris" />
+      <End Role="Uruns" EntitySet="Uruns" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,11 @@
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\obj\Debug\Database_Islemleri_Dal.csproj.AssemblyReference.cache
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\obj\Debug\Database_Islemleri_Dal.csproj.CoreCompileInputs.cache
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\bin\Debug\Database_Islemleri_Dal.dll.config
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\bin\Debug\Database_Islemleri_Dal.dll
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\bin\Debug\Database_Islemleri_Dal.pdb
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\bin\Debug\EntityFramework.dll
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\bin\Debug\EntityFramework.xml
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\obj\Debug\Database_Islemleri_Dal.dll
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\Database_Islemleri_Dal\obj\Debug\Database_Islemleri_Dal.pdb

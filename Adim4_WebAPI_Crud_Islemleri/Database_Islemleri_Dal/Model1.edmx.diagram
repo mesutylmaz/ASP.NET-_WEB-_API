@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e185dc83198f4104a6169cf55171d96b" Name="Diagram1">
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Admins" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Caris" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Departmen" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Detays" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.FaturaKalems" Width="1.5" PointX="8" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Faturas" Width="1.5" PointX="5.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Giders" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.KargoDetays" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.KargoTakips" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Kategoris" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Mesajs" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Personels" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.SatisHarekets" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.Uruns" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcOnlineTicariOtomasyonModel.YapilacakListesis" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MvcOnlineTicariOtomasyonModel.FK_dbo_SatisHarekets_dbo_Caris_Cariid" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcOnlineTicariOtomasyonModel.FK_dbo_Personels_dbo_Departmen_Departmanid" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcOnlineTicariOtomasyonModel.FK_dbo_FaturaKalems_dbo_Faturas_Faturaid" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcOnlineTicariOtomasyonModel.FK_dbo_Uruns_dbo_Kategoris_Kategoriid" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcOnlineTicariOtomasyonModel.FK_dbo_SatisHarekets_dbo_Personels_Personelid" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcOnlineTicariOtomasyonModel.FK_dbo_SatisHarekets_dbo_Uruns_Urunid" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

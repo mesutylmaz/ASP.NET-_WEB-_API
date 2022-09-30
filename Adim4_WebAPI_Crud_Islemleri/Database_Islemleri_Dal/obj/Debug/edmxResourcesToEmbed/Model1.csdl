@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcOnlineTicariOtomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciSifresi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Yetki" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Caris">
+    <Key>
+      <PropertyRef Name="CariID" />
+    </Key>
+    <Property Name="CariID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CariAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CariSoyadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CariSehir" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="CariMaili" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CariDurumu" Type="Boolean" Nullable="false" />
+    <Property Name="CariSifresi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CariGorseli" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CariTelefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EgitimBilgisi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YetenekBilgisi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SatisHarekets" Relationship="Self.FK_dbo_SatisHarekets_dbo_Caris_Cariid" FromRole="Caris" ToRole="SatisHarekets" />
+  </EntityType>
+  <EntityType Name="Departmen">
+    <Key>
+      <PropertyRef Name="DepartmanID" />
+    </Key>
+    <Property Name="DepartmanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmanAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmanDurumu" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Personels" Relationship="Self.FK_dbo_Personels_dbo_Departmen_Departmanid" FromRole="Departmen" ToRole="Personels" />
+  </EntityType>
+  <EntityType Name="Detays">
+    <Key>
+      <PropertyRef Name="DetayID" />
+    </Key>
+    <Property Name="DetayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UrunBilgisi" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FaturaKalems">
+    <Key>
+      <PropertyRef Name="FaturaKalemID" />
+    </Key>
+    <Property Name="FaturaKalemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FaturaKalemAciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FaturaKalemMiktar" Type="Int32" Nullable="false" />
+    <Property Name="FaturaKalemBirimFiyat" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FaturaKalemTutar" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Faturaid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Faturas" Relationship="Self.FK_dbo_FaturaKalems_dbo_Faturas_Faturaid" FromRole="FaturaKalems" ToRole="Faturas" />
+  </EntityType>
+  <EntityType Name="Faturas">
+    <Key>
+      <PropertyRef Name="FaturaID" />
+    </Key>
+    <Property Name="FaturaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FaturaSeriNo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FaturaSiraNo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="FaturaTarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FaturaSaat" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="FaturaTeslimEden" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FaturaTeslimAlan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FaturaVergiDairesi" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ToplamTutar" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="FaturaKalems" Relationship="Self.FK_dbo_FaturaKalems_dbo_Faturas_Faturaid" FromRole="Faturas" ToRole="FaturaKalems" />
+  </EntityType>
+  <EntityType Name="Giders">
+    <Key>
+      <PropertyRef Name="GiderID" />
+    </Key>
+    <Property Name="GiderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GiderAciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GiderTarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GiderTutar" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KargoDetays">
+    <Key>
+      <PropertyRef Name="KargoDetayID" />
+    </Key>
+    <Property Name="KargoDetayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Aciklama" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="TakipKodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="Personel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Alici" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="KargoTakips">
+    <Key>
+      <PropertyRef Name="KargoTakipID" />
+    </Key>
+    <Property Name="KargoTakipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KargoTakipKodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TarihZaman" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Kategoris">
+    <Key>
+      <PropertyRef Name="KategoriID" />
+    </Key>
+    <Property Name="KategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="KategoriDurumu" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Uruns" Relationship="Self.FK_dbo_Uruns_dbo_Kategoris_Kategoriid" FromRole="Kategoris" ToRole="Uruns" />
+  </EntityType>
+  <EntityType Name="Mesajs">
+    <Key>
+      <PropertyRef Name="MesajID" />
+    </Key>
+    <Property Name="MesajID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Alici" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gonderici" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Icerik" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Personels">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelSoyadi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelGorseli" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Departmanid" Type="Int32" Nullable="false" />
+    <Property Name="PersonelDurumu" Type="Boolean" Nullable="false" />
+    <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelMaili" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelTelefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EgitimBilgisi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YetenekBilgisi" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelSifresi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Departmen" Relationship="Self.FK_dbo_Personels_dbo_Departmen_Departmanid" FromRole="Personels" ToRole="Departmen" />
+    <NavigationProperty Name="SatisHarekets" Relationship="Self.FK_dbo_SatisHarekets_dbo_Personels_Personelid" FromRole="Personels" ToRole="SatisHarekets" />
+  </EntityType>
+  <EntityType Name="SatisHarekets">
+    <Key>
+      <PropertyRef Name="SatisHareketID" />
+    </Key>
+    <Property Name="SatisHareketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SatisHareketTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SatisHareketAdedi" Type="Int32" Nullable="false" />
+    <Property Name="SatisHareketFiyati" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SatisHareketToplamTutari" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cariid" Type="Int32" Nullable="false" />
+    <Property Name="Personelid" Type="Int32" Nullable="false" />
+    <Property Name="Urunid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Caris" Relationship="Self.FK_dbo_SatisHarekets_dbo_Caris_Cariid" FromRole="SatisHarekets" ToRole="Caris" />
+    <NavigationProperty Name="Personels" Relationship="Self.FK_dbo_SatisHarekets_dbo_Personels_Personelid" FromRole="SatisHarekets" ToRole="Personels" />
+    <NavigationProperty Name="Uruns" Relationship="Self.FK_dbo_SatisHarekets_dbo_Uruns_Urunid" FromRole="SatisHarekets" ToRole="Uruns" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Uruns">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UrunMarka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UrunStok" Type="Int16" Nullable="false" />
+    <Property Name="UrunAlisFiyati" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UrunSatisFiyati" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UrunDurumu" Type="Boolean" Nullable="false" />
+    <Property Name="UrunGorseli" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Kategoriid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Kategoris" Relationship="Self.FK_dbo_Uruns_dbo_Kategoris_Kategoriid" FromRole="Uruns" ToRole="Kategoris" />
+    <NavigationProperty Name="SatisHarekets" Relationship="Self.FK_dbo_SatisHarekets_dbo_Uruns_Urunid" FromRole="Uruns" ToRole="SatisHarekets" />
+  </EntityType>
+  <EntityType Name="YapilacakListesis">
+    <Key>
+      <PropertyRef Name="YapilacakID" />
+    </Key>
+    <Property Name="YapilacakID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Durumu" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_SatisHarekets_dbo_Caris_Cariid">
+    <End Role="Caris" Type="Self.Caris" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SatisHarekets" Type="Self.SatisHarekets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Caris">
+        <PropertyRef Name="CariID" />
+      </Principal>
+      <Dependent Role="SatisHarekets">
+        <PropertyRef Name="Cariid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Personels_dbo_Departmen_Departmanid">
+    <End Role="Departmen" Type="Self.Departmen" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Personels" Type="Self.Personels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departmen">
+        <PropertyRef Name="DepartmanID" />
+      </Principal>
+      <Dependent Role="Personels">
+        <PropertyRef Name="Departmanid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_FaturaKalems_dbo_Faturas_Faturaid">
+    <End Role="Faturas" Type="Self.Faturas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FaturaKalems" Type="Self.FaturaKalems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faturas">
+        <PropertyRef Name="FaturaID" />
+      </Principal>
+      <Dependent Role="FaturaKalems">
+        <PropertyRef Name="Faturaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Uruns_dbo_Kategoris_Kategoriid">
+    <End Role="Kategoris" Type="Self.Kategoris" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Uruns" Type="Self.Uruns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoris">
+        <PropertyRef Name="KategoriID" />
+      </Principal>
+      <Dependent Role="Uruns">
+        <PropertyRef Name="Kategoriid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SatisHarekets_dbo_Personels_Personelid">
+    <End Role="Personels" Type="Self.Personels" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SatisHarekets" Type="Self.SatisHarekets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personels">
+        <PropertyRef Name="PersonelID" />
+      </Principal>
+      <Dependent Role="SatisHarekets">
+        <PropertyRef Name="Personelid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SatisHarekets_dbo_Uruns_Urunid">
+    <End Role="Uruns" Type="Self.Uruns" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SatisHarekets" Type="Self.SatisHarekets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uruns">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="SatisHarekets">
+        <PropertyRef Name="Urunid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MvcOnlineTicariOtomasyonEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" />
+    <EntitySet Name="Caris" EntityType="Self.Caris" />
+    <EntitySet Name="Departmen" EntityType="Self.Departmen" />
+    <EntitySet Name="Detays" EntityType="Self.Detays" />
+    <EntitySet Name="FaturaKalems" EntityType="Self.FaturaKalems" />
+    <EntitySet Name="Faturas" EntityType="Self.Faturas" />
+    <EntitySet Name="Giders" EntityType="Self.Giders" />
+    <EntitySet Name="KargoDetays" EntityType="Self.KargoDetays" />
+    <EntitySet Name="KargoTakips" EntityType="Self.KargoTakips" />
+    <EntitySet Name="Kategoris" EntityType="Self.Kategoris" />
+    <EntitySet Name="Mesajs" EntityType="Self.Mesajs" />
+    <EntitySet Name="Personels" EntityType="Self.Personels" />
+    <EntitySet Name="SatisHarekets" EntityType="Self.SatisHarekets" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Uruns" EntityType="Self.Uruns" />
+    <EntitySet Name="YapilacakListesis" EntityType="Self.YapilacakListesis" />
+    <AssociationSet Name="FK_dbo_SatisHarekets_dbo_Caris_Cariid" Association="Self.FK_dbo_SatisHarekets_dbo_Caris_Cariid">
+      <End Role="Caris" EntitySet="Caris" />
+      <End Role="SatisHarekets" EntitySet="SatisHarekets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Personels_dbo_Departmen_Departmanid" Association="Self.FK_dbo_Personels_dbo_Departmen_Departmanid">
+      <End Role="Departmen" EntitySet="Departmen" />
+      <End Role="Personels" EntitySet="Personels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_FaturaKalems_dbo_Faturas_Faturaid" Association="Self.FK_dbo_FaturaKalems_dbo_Faturas_Faturaid">
+      <End Role="Faturas" EntitySet="Faturas" />
+      <End Role="FaturaKalems" EntitySet="FaturaKalems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Uruns_dbo_Kategoris_Kategoriid" Association="Self.FK_dbo_Uruns_dbo_Kategoris_Kategoriid">
+      <End Role="Kategoris" EntitySet="Kategoris" />
+      <End Role="Uruns" EntitySet="Uruns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SatisHarekets_dbo_Personels_Personelid" Association="Self.FK_dbo_SatisHarekets_dbo_Personels_Personelid">
+      <End Role="Personels" EntitySet="Personels" />
+      <End Role="SatisHarekets" EntitySet="SatisHarekets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SatisHarekets_dbo_Uruns_Urunid" Association="Self.FK_dbo_SatisHarekets_dbo_Uruns_Urunid">
+      <End Role="Uruns" EntitySet="Uruns" />
+      <End Role="SatisHarekets" EntitySet="SatisHarekets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

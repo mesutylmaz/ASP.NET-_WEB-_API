@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.5.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#btnVerileriCek").click(function () {        //Tıklama işlemi yapıldığında çalış
+                $.ajax({
+                    type: "Get",    //Get işlemi olarak çalış
+                    url: "https://localhost:44337/api/sehir",       //Veriyi bu Url'den çek
+                    success: function (response) {          //Function sonucunda dönen yanıt(response) => Url'den dönen sonuç 
+                        console.log(response);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnVerileriCek">Verileri Çek</button>
+</body>
+</html>

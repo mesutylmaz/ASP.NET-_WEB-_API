@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MvcOnlineTicariOtomasyonModelStoreContainer" CdmEntityContainer="MvcOnlineTicariOtomasyonEntities1">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Admins">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="KullaniciSifresi" ColumnName="KullaniciSifresi" />
+          <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Caris">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Caris">
+        <MappingFragment StoreEntitySet="Caris">
+          <ScalarProperty Name="CariID" ColumnName="CariID" />
+          <ScalarProperty Name="CariAdi" ColumnName="CariAdi" />
+          <ScalarProperty Name="CariSoyadi" ColumnName="CariSoyadi" />
+          <ScalarProperty Name="CariSehir" ColumnName="CariSehir" />
+          <ScalarProperty Name="CariMaili" ColumnName="CariMaili" />
+          <ScalarProperty Name="CariDurumu" ColumnName="CariDurumu" />
+          <ScalarProperty Name="CariSifresi" ColumnName="CariSifresi" />
+          <ScalarProperty Name="CariGorseli" ColumnName="CariGorseli" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="CariTelefon" ColumnName="CariTelefon" />
+          <ScalarProperty Name="EgitimBilgisi" ColumnName="EgitimBilgisi" />
+          <ScalarProperty Name="YetenekBilgisi" ColumnName="YetenekBilgisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departmen">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Departmen">
+        <MappingFragment StoreEntitySet="Departmen">
+          <ScalarProperty Name="DepartmanID" ColumnName="DepartmanID" />
+          <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
+          <ScalarProperty Name="DepartmanDurumu" ColumnName="DepartmanDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detays">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Detays">
+        <MappingFragment StoreEntitySet="Detays">
+          <ScalarProperty Name="DetayID" ColumnName="DetayID" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunBilgisi" ColumnName="UrunBilgisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FaturaKalems">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.FaturaKalems">
+        <MappingFragment StoreEntitySet="FaturaKalems">
+          <ScalarProperty Name="FaturaKalemID" ColumnName="FaturaKalemID" />
+          <ScalarProperty Name="FaturaKalemAciklama" ColumnName="FaturaKalemAciklama" />
+          <ScalarProperty Name="FaturaKalemMiktar" ColumnName="FaturaKalemMiktar" />
+          <ScalarProperty Name="FaturaKalemBirimFiyat" ColumnName="FaturaKalemBirimFiyat" />
+          <ScalarProperty Name="FaturaKalemTutar" ColumnName="FaturaKalemTutar" />
+          <ScalarProperty Name="Faturaid" ColumnName="Faturaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faturas">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Faturas">
+        <MappingFragment StoreEntitySet="Faturas">
+          <ScalarProperty Name="FaturaID" ColumnName="FaturaID" />
+          <ScalarProperty Name="FaturaSeriNo" ColumnName="FaturaSeriNo" />
+          <ScalarProperty Name="FaturaSiraNo" ColumnName="FaturaSiraNo" />
+          <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
+          <ScalarProperty Name="FaturaSaat" ColumnName="FaturaSaat" />
+          <ScalarProperty Name="FaturaTeslimEden" ColumnName="FaturaTeslimEden" />
+          <ScalarProperty Name="FaturaTeslimAlan" ColumnName="FaturaTeslimAlan" />
+          <ScalarProperty Name="FaturaVergiDairesi" ColumnName="FaturaVergiDairesi" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Giders">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Giders">
+        <MappingFragment StoreEntitySet="Giders">
+          <ScalarProperty Name="GiderID" ColumnName="GiderID" />
+          <ScalarProperty Name="GiderAciklama" ColumnName="GiderAciklama" />
+          <ScalarProperty Name="GiderTarih" ColumnName="GiderTarih" />
+          <ScalarProperty Name="GiderTutar" ColumnName="GiderTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KargoDetays">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.KargoDetays">
+        <MappingFragment StoreEntitySet="KargoDetays">
+          <ScalarProperty Name="KargoDetayID" ColumnName="KargoDetayID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="TakipKodu" ColumnName="TakipKodu" />
+          <ScalarProperty Name="Personel" ColumnName="Personel" />
+          <ScalarProperty Name="Alici" ColumnName="Alici" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KargoTakips">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.KargoTakips">
+        <MappingFragment StoreEntitySet="KargoTakips">
+          <ScalarProperty Name="KargoTakipID" ColumnName="KargoTakipID" />
+          <ScalarProperty Name="KargoTakipKodu" ColumnName="KargoTakipKodu" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="TarihZaman" ColumnName="TarihZaman" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategoris">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Kategoris">
+        <MappingFragment StoreEntitySet="Kategoris">
+          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+          <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
+          <ScalarProperty Name="KategoriDurumu" ColumnName="KategoriDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mesajs">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Mesajs">
+        <MappingFragment StoreEntitySet="Mesajs">
+          <ScalarProperty Name="MesajID" ColumnName="MesajID" />
+          <ScalarProperty Name="Alici" ColumnName="Alici" />
+          <ScalarProperty Name="Gonderici" ColumnName="Gonderici" />
+          <ScalarProperty Name="Konu" ColumnName="Konu" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personels">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Personels">
+        <MappingFragment StoreEntitySet="Personels">
+          <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+          <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+          <ScalarProperty Name="PersonelSoyadi" ColumnName="PersonelSoyadi" />
+          <ScalarProperty Name="PersonelGorseli" ColumnName="PersonelGorseli" />
+          <ScalarProperty Name="Departmanid" ColumnName="Departmanid" />
+          <ScalarProperty Name="PersonelDurumu" ColumnName="PersonelDurumu" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="PersonelMaili" ColumnName="PersonelMaili" />
+          <ScalarProperty Name="PersonelTelefon" ColumnName="PersonelTelefon" />
+          <ScalarProperty Name="EgitimBilgisi" ColumnName="EgitimBilgisi" />
+          <ScalarProperty Name="YetenekBilgisi" ColumnName="YetenekBilgisi" />
+          <ScalarProperty Name="PersonelSifresi" ColumnName="PersonelSifresi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatisHarekets">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.SatisHarekets">
+        <MappingFragment StoreEntitySet="SatisHarekets">
+          <ScalarProperty Name="SatisHareketID" ColumnName="SatisHareketID" />
+          <ScalarProperty Name="SatisHareketTarihi" ColumnName="SatisHareketTarihi" />
+          <ScalarProperty Name="SatisHareketAdedi" ColumnName="SatisHareketAdedi" />
+          <ScalarProperty Name="SatisHareketFiyati" ColumnName="SatisHareketFiyati" />
+          <ScalarProperty Name="SatisHareketToplamTutari" ColumnName="SatisHareketToplamTutari" />
+          <ScalarProperty Name="Cariid" ColumnName="Cariid" />
+          <ScalarProperty Name="Personelid" ColumnName="Personelid" />
+          <ScalarProperty Name="Urunid" ColumnName="Urunid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uruns">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.Uruns">
+        <MappingFragment StoreEntitySet="Uruns">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="UrunMarka" ColumnName="UrunMarka" />
+          <ScalarProperty Name="UrunStok" ColumnName="UrunStok" />
+          <ScalarProperty Name="UrunAlisFiyati" ColumnName="UrunAlisFiyati" />
+          <ScalarProperty Name="UrunSatisFiyati" ColumnName="UrunSatisFiyati" />
+          <ScalarProperty Name="UrunDurumu" ColumnName="UrunDurumu" />
+          <ScalarProperty Name="UrunGorseli" ColumnName="UrunGorseli" />
+          <ScalarProperty Name="Kategoriid" ColumnName="Kategoriid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YapilacakListesis">
+      <EntityTypeMapping TypeName="MvcOnlineTicariOtomasyonModel.YapilacakListesis">
+        <MappingFragment StoreEntitySet="YapilacakListesis">
+          <ScalarProperty Name="YapilacakID" ColumnName="YapilacakID" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Durumu" ColumnName="Durumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
