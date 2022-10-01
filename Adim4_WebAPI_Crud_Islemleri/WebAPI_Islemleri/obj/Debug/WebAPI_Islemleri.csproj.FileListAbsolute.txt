@@ -71,3 +71,4 @@ C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\A
 C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\WebAPI_Islemleri\obj\Debug\WebAPI_Islemleri.pdb
 C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\WebAPI_Islemleri\bin\EntityFramework.SqlServer.dll
 C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\WebAPI_Islemleri\bin\EntityFramework.SqlServer.xml
+C:\Users\Yılmaz Ailesi\Desktop\Murat Yücedağ Proje\ASP.NET WEB API DERSLERI\Adim4_WebAPI_Crud_Islemleri\WebAPI_Islemleri\obj\Debug\WebAPI_Islemleri.csproj.CopyComplete

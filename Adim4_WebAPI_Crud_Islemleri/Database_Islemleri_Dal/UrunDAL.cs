@@ -47,5 +47,12 @@ namespace Database_Islemleri_Dal
             db.Uruns.Remove(db.Uruns.Find(id));
             db.SaveChanges();
         }
+
+
+
+        public bool IsThereAnyUrun(int id)
+        {
+            return db.Uruns.Any(x => x.UrunID == id);       //Gönderilen id ile kayıtlı bir Ürün var mı? (varsa true, yoksa false döndürür)
+        }
     }
 }
